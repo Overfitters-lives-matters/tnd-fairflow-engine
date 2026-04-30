@@ -1,34 +1,76 @@
 # TND FairFlow Engine
-
 ### Real-Time Intrinsic Valuation and Liquidity Pressure Model for USD/TND
 
-This project develops a two-layer econometric framework for valuing USD/TND:
+---
 
-- **Global FX Basket Model** (EUR/USD, GBP/USD, USD/JPY)
-- **Local Liquidity Adjustment** (Kalman-filtered interbank spread)
+## Overview
 
-## Key Features
+The **TND FairFlow Engine** is a two-layer econometric framework designed to estimate the intrinsic value of USD/TND by combining:
 
-- Log-return basket regression with HAC-robust inference
-- Kalman filter calibrated via Maximum Likelihood (Q, R)
-- Regime-aware liquidity modeling
-- Real-time intrinsic value engine
-- Rolling out-of-sample backtesting
-- Diebold-Mariano forecast comparison
-- Mincer-Zarnowitz efficiency test
-- Regime-conditional performance analysis
-- Kalman posterior confidence bands
+- **Global FX fundamentals** (EUR/USD, GBP/USD, USD/JPY)
+- **Local Tunisian liquidity conditions** (interbank vs fixing spread)
 
-## Output
+Unlike the official fixing, the model produces a **market-consistent fair value** that reflects both international dynamics and domestic frictions.
 
-The model produces: Intrinsic USD/TND = Baseline (global FX) + Local Liquidity Adjustment
+---
 
-## Purpose
+## Model Architecture
 
-Designed as a hybrid between:
-- academic econometrics project
-- FX desk valuation tool
-- central bank-style monitoring framework
+\[
+Intrinsic_{t} = Baseline_{t} + Adjustment_{t}
+\]
+
+### 1. Global Basket Baseline
+- Log-return regression
+- HAC (Newey-West) robust inference
+- Rolling and static specifications
+
+### 2. Liquidity Adjustment
+- Kalman filter (MLE-calibrated Q, R)
+- Regime-aware spread dynamics
+- AR + state-space hybrid modeling
+
+---
+
+## Key Contributions
+
+- ✔ Intrinsic USD/TND valuation beyond official fixing  
+- ✔ Maximum Likelihood Kalman calibration  
+- ✔ Diebold-Mariano statistical validation  
+- ✔ Mincer-Zarnowitz forecast efficiency testing  
+- ✔ Regime-conditional performance analysis  
+- ✔ Real-time valuation architecture  
+
+---
+
+## Results
+
+The FairFlow model improves forecast accuracy relative to the fixing-only benchmark and provides economically meaningful decomposition between:
+
+- global FX-driven movements  
+- local liquidity-driven distortions  
+
+---
+
+## Use Cases
+
+- Treasury FX valuation  
+- Central bank monitoring  
+- Market stress diagnostics  
+- Risk management  
+
+---
+
+
+## Tech Stack
+
+- Python  
+- pandas / numpy  
+- statsmodels  
+- scipy  
+- matplotlib  
+
+---
 
 ## Author
 
