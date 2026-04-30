@@ -21,4 +21,15 @@ This project develops a two-layer econometric framework for valuing USD/TND:
 
 ## Output
 
-The model produces:
+The model produces: Intrinsic USD/TND = Baseline (global FX) + Local Liquidity Adjustment
+
+## Purpose
+
+Designed as a hybrid between:
+- academic econometrics project
+- FX desk valuation tool
+- central bank-style monitoring framework
+
+## Author
+
+mariem abidi
