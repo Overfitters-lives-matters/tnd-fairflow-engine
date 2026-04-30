@@ -16,9 +16,9 @@ Unlike the official fixing, the model produces a **market-consistent fair value*
 
 ## Model Architecture
 
-\[
-Intrinsic_{t} = Baseline_{t} + Adjustment_{t}
-\]
+$$
+Intrinsic_t = Baseline_t + Adjustment_t
+$$
 
 ### 1. Global Basket Baseline
 - Log-return regression
